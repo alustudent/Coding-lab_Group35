@@ -5,21 +5,21 @@
 # Janson: create active_logs, archived_logs and reports if missing
 initialize_system() {
 
-# Creating directory active-logs if it's not there!
+# Creating active-logs directory if it's not there it creates one!
 	if [ -d "active_logs" ]; then
 		echo "active_logs already exists!"
 	else
 		echo "Creating active_logs directory"
 		mkdir active_logs
 	fi
-# Creating archived_logs directory if it's not there it would create it
+# Creating archived_logs directory if it's not there it creates one!
 	if [ -d "archived_logs" ]; then
-		echo "archived_logs alreaady exists"
+		echo "archived_logs already exists"
 	else
 		echo "Creating archived_logs"
 		mkdir archived_logs
 	fi
-# Creating reports dir if it's not there it creates one!
+# Creating reports directory if it's not there it creates one!
 	if [ -d "reports" ]; then
 		echo "reports already exists"
 	else
