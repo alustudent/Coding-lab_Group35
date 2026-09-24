@@ -1,0 +1,7 @@
+# KNH policy: patient data and generated reports must never reach GitHub
+active_logs/
+archived_logs/
+reports/
+/tmp/hospital_system.pid
+
+__pycache__/
