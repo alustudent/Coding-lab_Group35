@@ -24,3 +24,6 @@ secure_data() {
 
 
 # Josia: execution logic
+
+# Build the folder structure first: secure_data needs active_logs to exist
+initialize_system
