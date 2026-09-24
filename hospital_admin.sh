@@ -27,3 +27,6 @@ secure_data() {
 
 # Build the folder structure first: secure_data needs active_logs to exist
 initialize_system
+
+# Lock down active_logs now that it exists
+secure_data
