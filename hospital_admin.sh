@@ -30,3 +30,6 @@ initialize_system
 
 # Lock down active_logs now that it exists
 secure_data
+
+# Confirm success with a timestamp; $(date) inserts the current date and time
+echo "System Environment Secured - $(date)"
