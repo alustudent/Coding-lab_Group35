@@ -4,28 +4,15 @@
 
 # Janson: create active_logs, archived_logs and reports if missing
 initialize_system() {
-
-# Creating active-logs directory if it's not there it creates one!
-	if [ -d "active_logs" ]; then
-		echo "active_logs already exists!"
-	else
-		echo "Creating active_logs directory"
-		mkdir active_logs
-	fi
-# Creating archived_logs directory if it's not there it creates one!
-	if [ -d "archived_logs" ]; then
-		echo "archived_logs already exists"
-	else
-		echo "Creating archived_logs"
-		mkdir archived_logs
-	fi
-# Creating reports directory if it's not there it creates one!
-	if [ -d "reports" ]; then
-		echo "reports already exists"
-	else
-		echo "Creating reports"
-		mkdir reports
-	fi
+# Creating directories active_logs, archived_logs and reports if they do not exist
+	for dir in active_logs archived_logs reports; do 
+		if [ -d "$dir" ]; then
+			echo "$dir directory already exists."
+		else
+			echo "Creating $dir directory..."
+			mkdir "$dir"
+		fi
+	done
 }
 
 # Gahima: restrict active_logs to owner read/write and display permissions
