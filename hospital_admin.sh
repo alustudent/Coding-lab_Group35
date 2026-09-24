@@ -12,14 +12,14 @@ initialize_system() {
 		echo "Creating active_logs directory"
 		mkdir active_logs
 	fi
-# Creating archived_logs directory if it's not there
+# Creating archived_logs directory if it's not there it would create it
 	if [ -d "archived_logs" ]; then
 		echo "archived_logs alreaady exists"
 	else
 		echo "Creating archived_logs"
 		mkdir archived_logs
 	fi
-# Creating reports dir if it's not there!
+# Creating reports dir if it's not there it creates one!
 	if [ -d "reports" ]; then
 		echo "reports already exists"
 	else
