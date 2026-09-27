@@ -11,7 +11,7 @@ The DevOps setup for Kenyatta National Hospital (KNH). It secures and manages da
 | Josia | The Orchestrator | Execution logic in `hospital_admin.sh` | `feature/admin-orchestration` |
 | Dan | The Archivist | `hospital_archive.sh` | `feature/log-archiving` |
 | Bethelhem | Clinical Analyst | `process_vitals()` in `hospital_analysis.sh` | `feature/process-vitals` |
-| Alemayehu | Facility Auditor | `water_audit()` in `hospital_analysis.sh` | `feature/water-audit` |
+| Bellamy | Facility Auditor | `water_audit()` in `hospital_analysis.sh` | `feature/water-audit` |
 
 ## Repository Structure
 
@@ -19,7 +19,7 @@ The DevOps setup for Kenyatta National Hospital (KNH). It secures and manages da
 Coding-lab_Group35/
 ├── hospital_system.py     # Data engine (simulator)
 ├── hospital_admin.sh      # Janson, Gahima, Josia: environment setup and permissions
-├── hospital_analysis.sh   # Bethelhem, Alemayehu: critical alerts and water audit
+├── hospital_analysis.sh   # Bethelhem, Bellamy: critical alerts and water audit
 ├── hospital_archive.sh    # Dan: log rotation
 ├── .gitignore             # Keeps logs and reports out of version control
 └── README.md
