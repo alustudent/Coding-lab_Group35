@@ -6,6 +6,12 @@ rotate_logs() {
     local timestamp
     timestamp=$(date +%Y%m%d_%H%M)
 
+    # Fail fast if archived_logs doesn't exist - don't silently succeed
+    if [ ! -d "archived_logs" ]; then
+        echo "Error: archived_logs directory does not exist. Aborting." >&2
+        return 1
+    fi
+
     echo "Rotating logs at $timestamp..."
 
     for log in active_logs/*.log; do
