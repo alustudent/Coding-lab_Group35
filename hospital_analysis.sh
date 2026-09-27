@@ -15,23 +15,15 @@ process_vitals() {
     fi
 
     mkdir -p "$report_dir" || return 1
-    awk -F ' *[|] *' '
-        FNR == 1 { section_printed = 0 }
-        $4 == "CRITICAL" {
-            if (!section_printed) {
-                if (FILENAME == ARGV[1]) print "Heart rate critical alerts:"
-                else print "Temperature critical alerts:"
-                section_printed = 1
-            }
-            print
-            total++
-        }
-        END {
-            if (total == 0) print "No critical heart rate or temperature readings found."
-        }
-    ' "$heart_log" "$temp_log" > "$report_file" || return 1
 
-    printf 'Critical vital alerts written to %s\n' "$report_file"
+    # grep finds CRITICAL rows (Status is the last column), awk keeps Timestamp, Device_ID and Value
+    {
+        printf 'Timestamp | Device_ID | Value\n'
+        grep -h '| CRITICAL$' "$heart_log" "$temp_log" |
+            awk -F ' \\| ' '{ printf "%s | %s | %s\n", $1, $2, $3 }'
+    } > "$report_file" || return 1
+
+    printf '%d critical alerts written to %s\n' "$(($(wc -l < "$report_file") - 1))" "$report_file"
 }
 
 # Alemayehu: average water usage for ICU_WATER_RESERVE
