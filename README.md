@@ -13,6 +13,8 @@ The DevOps setup for Kenyatta National Hospital (KNH). It secures and manages da
 | Bethelhem | Clinical Analyst | `process_vitals()` in `hospital_analysis.sh` | `feature/process-vitals` |
 | Bellamy | Facility Auditor | `water_audit()` in `hospital_analysis.sh` | `feature/water-audit` |
 
+Task allocation, progress and meeting attendance are tracked in the [Group Task Tracker](https://docs.google.com/spreadsheets/d/1XwgOBh5vmIm1jf3R4KJcANdbPlu0sNAO9IFfTk2rmQ4/edit?gid=0#gid=0).
+
 ## Repository Structure
 
 ```
