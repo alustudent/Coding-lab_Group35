@@ -11,3 +11,10 @@ process_vitals() {
 water_audit() {
     :
 }
+
+# Bellamy: execution logic
+# Run from the script's directory so relative log paths resolve from anywhere
+cd "$(dirname "$0")" || exit 1
+
+process_vitals
+water_audit
