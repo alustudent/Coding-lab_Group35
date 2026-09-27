@@ -20,16 +20,17 @@ rotate_logs() {
         base=$(basename "$log" .log)
         local dest="archived_logs/${base}_${timestamp}.log"
 
-        # Don't clobber an existing archive from the same minute
         if [ -e "$dest" ]; then
             echo "Skipping $log -> $dest (archive already exists)" >&2
             continue
         fi
 
-        mv "$log" "$dest"
-        echo "Archived $log -> $dest"
-
-        touch "$log"
+        if mv "$log" "$dest"; then
+            echo "Archived $log -> $dest"
+            touch "$log"
+        else
+            echo "Error: failed to move $log to $dest" >&2
+        fi
     done
 
     echo "Log rotation complete - active_logs reset for continued recording."
